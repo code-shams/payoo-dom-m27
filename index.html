@@ -11,7 +11,52 @@
         />
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     </head>
-    <body>
-        
+    <body class="bg-slate-500">
+        <section class="bg-gray-200 max-w-sm min-h-screen mx-auto relative">
+            <div>
+                <img
+                    class="w-62 absolute top-32 left-18"
+                    src="./assets/eclipse.png"
+                    alt=""
+                />
+                <img
+                    class="w-16 absolute top-40 left-42"
+                    src="./assets/tick.png"
+                    alt=""
+                />
+            </div>
+            <!-- Log In Section -->
+            <div class="hero bg-base-200 min-h-screen p-5">
+                    <div
+                        class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mt-28"
+                    >
+                        <div class="card-body">
+                            <fieldset class="fieldset">
+                                <label class="fieldset-label text-black font-semibold">Mobile Number</label>
+                                <input
+                                    type="text"
+                                    class="input rounded-full border-none bg-gray-100"
+                                    placeholder="Enter your number"
+                                />
+                                <label class="fieldset-label text-black font-semibold mt-2">4 Digit Pin</label>
+                                <input
+                                    type="password"
+                                    class="input rounded-full border-none bg-gray-100"
+                                    placeholder="Enter 4 Digit Pin"
+                                />
+                                <!-- <div>
+                                    <a class="link link-hover"
+                                        >Forgot password?</a
+                                    >
+                                </div> -->
+                                <button class="btn btn-primary mt-4 rounded-full">
+                                    Login
+                                </button>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </body>
 </html>
