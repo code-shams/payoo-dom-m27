@@ -21,7 +21,9 @@
                 <div class="flex gap-2 items-center">
                     <img class="w-10" src="./assets/tick.png" alt="" />
                     <div>
-                        <h2 class="font-bold">$45000</h2>
+                        <h2 class="font-bold">
+                            $<span id="balance">45000</span>
+                        </h2>
                         <p class="font-light text-sm">Available Balance</p>
                     </div>
                 </div>
@@ -46,6 +48,7 @@
                 <div class="grid grid-cols-3 gap-4">
                     <!-- card1 -->
                     <div
+                        id="add-money-card"
                         class="cursor-pointer border-gray-300 border-2 rounded-lg justify-items-center p-3 space-y-2"
                     >
                         <img src="./assets/wallet.png" alt="" />
@@ -53,35 +56,40 @@
                     </div>
                     <!-- card2 -->
                     <div
-                        class="border-gray-300 border-2 rounded-lg justify-items-center p-3 space-y-2"
+                        id="cashout-card"
+                        class="cursor-pointer border-gray-300 border-2 rounded-lg justify-items-center p-3 space-y-2"
                     >
                         <img src="./assets/cashout.png" alt="" />
                         <p class="text-xs">Cashout</p>
                     </div>
                     <!-- card3 -->
                     <div
-                        class="border-gray-300 border-2 rounded-lg justify-items-center py-3 space-y-2"
+                        id="transfer-money-card"
+                        class="cursor-pointer border-gray-300 border-2 rounded-lg justify-items-center py-3 space-y-2"
                     >
                         <img src="./assets/transfer.png" alt="" />
                         <p class="text-xs text-center">Transfer Money</p>
                     </div>
                     <!-- card4 -->
                     <div
-                        class="border-gray-300 border-2 rounded-lg justify-items-center p-3 space-y-2"
+                        id="get-bonus-card"
+                        class="cursor-pointer border-gray-300 border-2 rounded-lg justify-items-center p-3 space-y-2"
                     >
                         <img src="./assets/bonus.png" alt="" />
                         <p class="text-xs">Get Bonus</p>
                     </div>
                     <!-- card5 -->
                     <div
-                        class="border-gray-300 border-2 rounded-lg justify-items-center p-3 space-y-2"
+                        id="pay-bill-card"
+                        class="cursor-pointer border-gray-300 border-2 rounded-lg justify-items-center p-3 space-y-2"
                     >
                         <img src="./assets/paybill.png" alt="" />
                         <p class="text-xs">Pay Bill</p>
                     </div>
                     <!-- card6 -->
                     <div
-                        class="border-gray-300 border-2 rounded-lg justify-items-center p-3 space-y-2"
+                        id="transactions-card"
+                        class="cursor-pointer border-gray-300 border-2 rounded-lg justify-items-center p-3 space-y-2"
                     >
                         <img src="./assets/transaction.png" alt="" />
                         <p class="text-xs">Transactions</p>
@@ -89,51 +97,229 @@
                 </div>
             </section>
             <!-- Add Money Section -->
-            <section class="mt-5 px-4">
+            <section id="add-money-section" class="mt-5 px-4 toggle-section hidden">
                 <h1 class="font-bold">Add Money</h1>
+                <!-- Login form -->
                 <div
-                        class="card bg-base-100 max-w-sm shrink-0 mt-4 rounded-2xl"
+                    class="card bg-base-100 max-w-sm shrink-0 mt-4 rounded-2xl"
+                >
+                    <div class="card-body">
+                        <form class="fieldset">
+                            <label
+                                class="fieldset-label text-black font-semibold"
+                                >Select A Bank</label
+                            >
+                            <select
+                                id="select-bank"
+                                class="select rounded-full border-none bg-gray-100"
+                                required
+                            >
+                                <option disabled selected>Select Bank</option>
+                                <option value="bkash">Bkash</option>
+                                <option value="nagad">Nagad</option>
+                                <option value="dbbl">DBBL</option>
+                            </select>
+                            <label
+                                class="fieldset-label text-black font-semibold"
+                                >Bank Account Number</label
+                            >
+                            <input
+                                type="text"
+                                class="input rounded-full border-none bg-gray-100"
+                                id="account-number"
+                                placeholder="Enter 11 digit account number"
+                                required
+                            />
+                            <label
+                                class="fieldset-label text-black font-semibold"
+                                >Amount to Add</label
+                            >
+                            <input
+                                type="text"
+                                class="input rounded-full border-none bg-gray-100"
+                                id="add-money"
+                                placeholder="Add amount to withdraw"
+                                required
+                            />
+                            <label
+                                class="fieldset-label text-black font-semibold mt-2"
+                                >Pin Number</label
+                            >
+                            <input
+                                type="password"
+                                class="input rounded-full border-none bg-gray-100"
+                                id="password"
+                                placeholder="Enter 4 Digit Pin"
+                                required
+                            />
+                            <button
+                                id="add-money-btn"
+                                class="btn btn-primary mt-4 rounded-full"
+                            >
+                                Add Money
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <!-- Transactions Seciton -->
+            <section id="transactions-section" class="p-5 toggle-section">
+                <div class="flex justify-between mb-3">
+                    <h1 class="font-bold">Latest Payment</h1>
+                    <p class="font-light">View All</p>
+                </div>
+                <!-- Card Container -->
+                <div class="grid grid-cols-1 gap-4">
+                    <!-- card1 -->
+                    <div
+                        class="bg-gray-100 p-2 rounded-sm flex justify-between items-center"
                     >
-                        <div class="card-body">
-                            <form class="fieldset">
-                                <label class="fieldset-label text-black font-semibold">Select A Bank</label>
-                                <select class="select rounded-full border-none bg-gray-100"">
-                                    <option disabled selected>Select Bank</option>
-                                    <option value="bkash">Bkash</option>
-                                    <option value="nagad">Nagad</option>
-                                    <option value="dbbl">DBBL</option>
-                                </select>
-                                <label class="fieldset-label text-black font-semibold">Bank Account Number</label>
-                                <input
-                                    type="text"
-                                    class="input rounded-full border-none bg-gray-100"
-                                    id="mobile-number"
-                                    placeholder="Enter 11 digit account number"
-                                    required
+                        <div class="flex gap-2 items-center">
+                            <div>
+                                <img
+                                    class="p-2 bg-slate-200 rounded-full"
+                                    src="./assets/wallet.png"
+                                    alt=""
                                 />
-                                <label class="fieldset-label text-black font-semibold">Amount to Add</label>
-                                <input
-                                    type="text"
-                                    class="input rounded-full border-none bg-gray-100"
-                                    id="add-money"
-                                    placeholder="Add amount to withdraw"
-                                    required
-                                />
-                                <label class="fieldset-label text-black font-semibold mt-2">Pin Number</label>
-                                <input
-                                    type="password"
-                                    class="input rounded-full border-none bg-gray-100"
-                                    id="password"
-                                    placeholder="Enter 4 Digit Pin"
-                                    required
-                                />
-                                <button id="login-btn" class="btn btn-primary mt-4 rounded-full">
-                                    Add Money
-                                </button>
-                            </>
+                            </div>
+                            <div>
+                                <h1 class="font-bold">Electricity Bill</h1>
+                                <p class="font-light text-sm">Today 01:44 AM</p>
+                            </div>
+                        </div>
+                        <div>
+                            <button>
+                                <img src="./assets/threedot.png" alt="" />
+                            </button>
                         </div>
                     </div>
+                    <!-- card2 -->
+                    <div
+                        class="bg-gray-100 p-2 rounded-sm flex justify-between items-center"
+                    >
+                        <div class="flex gap-2 items-center">
+                            <div>
+                                <img
+                                    class="p-2 bg-slate-200 rounded-full"
+                                    src="./assets/wallet.png"
+                                    alt=""
+                                />
+                            </div>
+                            <div>
+                                <h1 class="font-bold">Bank Deposit</h1>
+                                <p class="font-light text-sm">Today 01:44 AM</p>
+                            </div>
+                        </div>
+                        <div>
+                            <button>
+                                <img src="./assets/threedot.png" alt="" />
+                            </button>
+                        </div>
+                    </div>
+                    <!-- card3 -->
+                    <div
+                        class="bg-gray-100 p-2 rounded-sm flex justify-between items-center"
+                    >
+                        <div class="flex gap-2 items-center">
+                            <div>
+                                <img
+                                    class="p-2 bg-slate-200 rounded-full"
+                                    src="./assets/wallet.png"
+                                    alt=""
+                                />
+                            </div>
+                            <div>
+                                <h1 class="font-bold">Mobile Recharge</h1>
+                                <p class="font-light text-sm">Today 01:44 AM</p>
+                            </div>
+                        </div>
+                        <div>
+                            <button>
+                                <img src="./assets/threedot.png" alt="" />
+                            </button>
+                        </div>
+                    </div>
+                    <!-- card4 -->
+                    <div
+                        class="bg-gray-100 p-2 rounded-sm flex justify-between items-center"
+                    >
+                        <div class="flex gap-2 items-center">
+                            <div>
+                                <img
+                                    class="p-2 bg-slate-200 rounded-full"
+                                    src="./assets/wallet.png"
+                                    alt=""
+                                />
+                            </div>
+                            <div>
+                                <h1 class="font-bold">Gas Bill</h1>
+                                <p class="font-light text-sm">Today 01:44 AM</p>
+                            </div>
+                        </div>
+                        <div>
+                            <button>
+                                <img src="./assets/threedot.png" alt="" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </section>
+            <!-- Cash Out Section -->
+            <section id="cashout-section" class="mt-5 px-4 toggle-section hidden">
+                <h1 class="font-bold">Cash Out</h1>
+                <!-- Login form -->
+                <div
+                    class="card bg-base-100 max-w-sm shrink-0 mt-4 rounded-2xl"
+                >
+                    <div class="card-body">
+                        <form class="fieldset">
+                            <label
+                                class="fieldset-label text-black font-semibold"
+                                >Agent Number</label
+                            >
+                            <input
+                                type="text"
+                                class="input rounded-full border-none bg-gray-100"
+                                id="agent-number"
+                                placeholder="Enter 11 digit number"
+                                required
+                            />
+                            <label
+                                class="fieldset-label text-black font-semibold"
+                                >Amount</label
+                            >
+                            <input
+                                type="text"
+                                class="input rounded-full border-none bg-gray-100"
+                                id="amount"
+                                placeholder="Enter amount to withdraw"
+                                required
+                            />
+                            <label
+                                class="fieldset-label text-black font-semibold mt-2"
+                                >Pin Number</label
+                            >
+                            <input
+                                type="password"
+                                class="input rounded-full border-none bg-gray-100"
+                                id="pin"
+                                placeholder="Enter 4 Digit Pin"
+                                required
+                            />
+                            <button
+                                id="withdraw-money-btn"
+                                class="btn btn-primary mt-4 rounded-full"
+                            >
+                                Withdraw Money
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            
         </section>
+        <script src="./scripts/addMoney.js"></script>
+        <script src="./scripts/toggle.js"></script>
+        <script src="./scripts/cashout.js"></script>
     </body>
 </html>
