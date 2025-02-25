@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Payoo Main</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.8/daisyui.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+    <body class="bg-slate-400">
+        <!-- Main Section -->
+        <section class="bg-slate-200 max-w-sm min-h-screen mx-auto pb-10">
+            <!-- Navbar Section -->
+            <nav
+                class="flex items-center justify-between p-5 border-gray-400 border-b-1 bg-gray-100"
+            >
+                <div class="flex gap-2 items-center">
+                    <img class="w-10" src="./assets/tick.png" alt="" />
+                    <div>
+                        <h2 class="font-bold">$45000</h2>
+                        <p class="font-light text-sm">Available Balance</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="font-light btn btn-outline text-sm">
+                        <img src="./assets/logout.png" alt="" />
+                        Log Out
+                    </button>
+                </div>
+            </nav>
+            <!-- Welcome Section -->
+            <section class="p-5 bg-gray-100 rounded-b-3xl">
+                <!-- Text contents -->
+                <div class="mb-5">
+                    <h1 class="font-bold text-lg">🔥 Welcome to Payoo!</h1>
+                    <p class="font-light text-sm">
+                        Enjoy easy and convenient financial services with us.
+                        Cashout charge is low.
+                    </p>
+                </div>
+                <!-- Cards container -->
+                <div class="grid grid-cols-3 gap-4">
+                    <!-- card1 -->
+                    <div
+                        class="cursor-pointer border-gray-300 border-2 rounded-lg justify-items-center p-3 space-y-2"
+                    >
+                        <img src="./assets/wallet.png" alt="" />
+                        <p class="text-xs">Add Money</p>
+                    </div>
+                    <!-- card2 -->
+                    <div
+                        class="border-gray-300 border-2 rounded-lg justify-items-center p-3 space-y-2"
+                    >
+                        <img src="./assets/cashout.png" alt="" />
+                        <p class="text-xs">Cashout</p>
+                    </div>
+                    <!-- card3 -->
+                    <div
+                        class="border-gray-300 border-2 rounded-lg justify-items-center py-3 space-y-2"
+                    >
+                        <img src="./assets/transfer.png" alt="" />
+                        <p class="text-xs text-center">Transfer Money</p>
+                    </div>
+                    <!-- card4 -->
+                    <div
+                        class="border-gray-300 border-2 rounded-lg justify-items-center p-3 space-y-2"
+                    >
+                        <img src="./assets/bonus.png" alt="" />
+                        <p class="text-xs">Get Bonus</p>
+                    </div>
+                    <!-- card5 -->
+                    <div
+                        class="border-gray-300 border-2 rounded-lg justify-items-center p-3 space-y-2"
+                    >
+                        <img src="./assets/paybill.png" alt="" />
+                        <p class="text-xs">Pay Bill</p>
+                    </div>
+                    <!-- card6 -->
+                    <div
+                        class="border-gray-300 border-2 rounded-lg justify-items-center p-3 space-y-2"
+                    >
+                        <img src="./assets/transaction.png" alt="" />
+                        <p class="text-xs">Transactions</p>
+                    </div>
+                </div>
+            </section>
+            <!-- Add Money Section -->
+            <section class="mt-5 px-4">
+                <h1 class="font-bold">Add Money</h1>
+                <div
+                        class="card bg-base-100 max-w-sm shrink-0 mt-4 rounded-2xl"
+                    >
+                        <div class="card-body">
+                            <form class="fieldset">
+                                <label class="fieldset-label text-black font-semibold">Select A Bank</label>
+                                <select class="select rounded-full border-none bg-gray-100"">
+                                    <option disabled selected>Select Bank</option>
+                                    <option value="bkash">Bkash</option>
+                                    <option value="nagad">Nagad</option>
+                                    <option value="dbbl">DBBL</option>
+                                </select>
+                                <label class="fieldset-label text-black font-semibold">Bank Account Number</label>
+                                <input
+                                    type="text"
+                                    class="input rounded-full border-none bg-gray-100"
+                                    id="mobile-number"
+                                    placeholder="Enter 11 digit account number"
+                                    required
+                                />
+                                <label class="fieldset-label text-black font-semibold">Amount to Add</label>
+                                <input
+                                    type="text"
+                                    class="input rounded-full border-none bg-gray-100"
+                                    id="add-money"
+                                    placeholder="Add amount to withdraw"
+                                    required
+                                />
+                                <label class="fieldset-label text-black font-semibold mt-2">Pin Number</label>
+                                <input
+                                    type="password"
+                                    class="input rounded-full border-none bg-gray-100"
+                                    id="password"
+                                    placeholder="Enter 4 Digit Pin"
+                                    required
+                                />
+                                <button id="login-btn" class="btn btn-primary mt-4 rounded-full">
+                                    Add Money
+                                </button>
+                            </>
+                        </div>
+                    </div>
+            </section>
+        </section>
+    </body>
+</html>

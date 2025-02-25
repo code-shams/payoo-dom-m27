@@ -13,7 +13,7 @@
     </head>
     <body class="bg-slate-500">
         <section class="bg-gray-200 max-w-sm min-h-screen mx-auto">
-            <div class=" flex flex-col items-center h-28 relative top-32">
+            <div class=" flex flex-col items-center h-28 relative top-20">
                 <img
                     class="w-62 absolute"
                     src="./assets/eclipse.png"
@@ -28,35 +28,40 @@
             <!-- Log In Section -->
             <div class="p-5">
                     <div
-                        class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mt-28"
+                        class="card bg-base-100 w-full max-w-sm shrink-0 mt-18"
                     >
                         <div class="card-body">
-                            <fieldset class="fieldset">
+                            <form class="fieldset">
                                 <label class="fieldset-label text-black font-semibold">Mobile Number</label>
                                 <input
                                     type="text"
                                     class="input rounded-full border-none bg-gray-100"
+                                    id="mobile-number"
                                     placeholder="Enter your number"
+                                    required
                                 />
                                 <label class="fieldset-label text-black font-semibold mt-2">4 Digit Pin</label>
                                 <input
                                     type="password"
                                     class="input rounded-full border-none bg-gray-100"
+                                    id="password"
                                     placeholder="Enter 4 Digit Pin"
+                                    required
                                 />
                                 <!-- <div>
                                     <a class="link link-hover"
                                         >Forgot password?</a
                                     >
                                 </div> -->
-                                <button class="btn btn-primary mt-4 rounded-full">
+                                <button id="login-btn" class="btn btn-primary mt-4 rounded-full">
                                     Login
                                 </button>
-                            </fieldset>
+                            </>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <script src="login.js"></script>
     </body>
 </html>
