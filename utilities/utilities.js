@@ -23,7 +23,7 @@ function updateTransaction (transactionType, amount, account){
             <div>
                 <img
                     class="p-2 bg-slate-200 rounded-full"
-                    src="../assets/wallet.png"
+                    src="./assets/wallet.png"
                     alt=""
                 />
             </div>
