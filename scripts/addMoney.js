@@ -11,6 +11,7 @@ addEventListener("click", function(event){
             if (!isNaN(+accountNum.value) && accountNum.value.length === 11){
                 const sum = +balance.innerText + +amount.value;
                 balance.innerText = sum;
+                updateTransaction ("Added", amount.value, accountNum.value);
             }
             else{
                 alert("Invalid Account Number");

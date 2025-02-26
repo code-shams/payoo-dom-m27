@@ -10,6 +10,7 @@ addEventListener("click", function(event){
             if (!isNaN(+agentNum.value) && agentNum.value.length === 11){
                 const adjustedBalance = +balance.innerText - +amount.value;
                 balance.innerText = adjustedBalance;
+                updateTransaction("Cashed out", amount.value, agentNum.value);
             }
             else{
                 alert("Invalid Account Number");
