@@ -36,7 +36,7 @@ function updateTransaction (transactionType, amount, account){
         </div>
         <div>
             <button>
-                <img src="../assets/threedot.png" alt="" />
+                <img src="./assets/threedot.png" alt="" />
             </button>
         </div>
     </div>
